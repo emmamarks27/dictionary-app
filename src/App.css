@@ -1,0 +1,8 @@
+.container {
+  max-width: 400px;
+  margin: 20px auto 0;
+}
+.footer {
+  text-align: center;
+  margin-top: 50px;
+}
