@@ -10,7 +10,16 @@ export default function App() {
         <main>
           <Dictionary />
         </main>
-        <footer className="footer">Coded by Emma Marks</footer>
+        <footer className="footer">
+          Coded by{" "}
+          <a
+            href="https://github.com/emmamarks27"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Emma Marks
+          </a>
+        </footer>
       </div>
     </div>
   );
