@@ -1,10 +1,10 @@
 export default function Example(props) {
   if (props.example) {
     return (
-      <p>
+      <span>
         <strong>Example:</strong>
         <em>{props.example}</em>
-      </p>
+      </span>
     );
   } else {
     return null;
