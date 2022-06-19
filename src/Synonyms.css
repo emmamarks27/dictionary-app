@@ -1,0 +1,5 @@
+.synonyms span {
+  list-style-type: none;
+  display: inline;
+  padding-right: 0.5em;
+}

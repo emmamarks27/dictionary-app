@@ -1,13 +1,15 @@
+import "./Synonyms.css";
+
 export default function Synonyms(props) {
   if (props.synonyms.length > 0) {
     return (
-      <p>
-        <strong>Synonyms:</strong>
-        <ul>
+      <p className="synonyms">
+        similar:{" "}
+        <em>
           {props.synonyms.map(function (synonym, index) {
-            return <li key={index}>{synonym}</li>;
+            return <span key={index}>{synonym}</span>;
           })}
-        </ul>
+        </em>
       </p>
     );
   } else {

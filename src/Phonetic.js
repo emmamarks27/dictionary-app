@@ -1,9 +1,10 @@
 import React from "react";
+import "./Phonetic.css";
 
 export default function Phonetic(props) {
   if (props.phonetic) {
     return (
-      <div>
+      <div className="phonetics">
         <a
           className="synonym-audio"
           href={props.phonetic.audio}
