@@ -7,6 +7,7 @@ export default function Dictionary(props) {
   let [keyword, setKeyword] = useState(props.keyword);
   let [results, setResults] = useState(null);
   let [loaded, setLoaded] = useState(false);
+  let [images, setImages] = useState(null);
   function handleChange(event) {
     setKeyword(event.target.value);
   }
@@ -14,6 +15,12 @@ export default function Dictionary(props) {
   function search() {
     let url = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
     axios.get(url).then(handleResponse);
+
+    let pexelsapiKey =
+      "563492ad6f917000010000013fd9e419869741dc8208b4c3283dcf2b";
+    let pexelsURL = `https://api.pexels.com/v1/search?query=${keyword}&per_page=9`;
+    let header = { Authorization: `Bearer ${pexelsapiKey}` };
+    axios.get(pexelsURL, { headers: header }).then(handlePexelResponse);
   }
 
   function handleSubmit(event) {
@@ -24,6 +31,11 @@ export default function Dictionary(props) {
   function load() {
     setLoaded(true);
     search();
+  }
+
+  function handlePexelResponse(response) {
+    console.log(response.data.photos);
+    setImages(response.data.photos);
   }
 
   function handleResponse(response) {
@@ -39,7 +51,7 @@ export default function Dictionary(props) {
           </form>
           <p>Suggested words: sunset, head, pound...</p>
         </section>
-        <Results results={results} />
+        <Results results={results} images={images} />
       </div>
     );
   } else {
