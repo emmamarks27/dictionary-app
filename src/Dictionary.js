@@ -49,7 +49,7 @@ export default function Dictionary(props) {
           <form onSubmit={handleSubmit}>
             <input type="search" onChange={handleChange} placeholder="hello" />
           </form>
-          <p>Suggested words: sunset, head, pound...</p>
+          <p>Suggested words: yoga, wine, sunset...</p>
         </section>
         <Results results={results} images={images} />
       </div>
